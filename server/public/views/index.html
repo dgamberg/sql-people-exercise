@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/styles/styles.css"/>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/app.js"></script>
+</head>
+<body>
+<section class="container" ng-controller="MainController">
+
+        <select  ng-change='getAddressesByName(selection.name)' ng-model="selection"  ng-options="user.name for user in usersArray"></select>
+
+        <div ng-repeat="address in addressArray" class="well">
+            <div>{{address.address_type}}</div>
+            <div>{{address.address_street}}</div>
+            <div>{{address.address_city}}, {{address.address_state}} {{address.address_zip}} </div>
+        </div>
+</section>
+</body>
+</html>
